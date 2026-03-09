@@ -1,0 +1,24 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DashrockDeploySST",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:*",
+        "s3:*",
+        "lambda:*",
+        "iam:*",
+        "cloudfront:*",
+        "events:*",
+        "logs:*",
+        "route53:*",
+        "acm:*",
+        "ssm:*",
+        "sts:GetCallerIdentity",
+        "sts:AssumeRole"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

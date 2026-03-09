@@ -1,0 +1,25 @@
+# Dashrock Configuration
+# Copy this file to dashrock.config.yaml and edit it for your environment.
+# Then upload it: ./scripts/upload-config.sh production
+
+# Map IAM principals (ARNs) to team names
+teams:
+  # engineering:
+  #   - arn:aws:iam::123456789012:role/engineering-role
+  #   - arn:aws:iam::123456789012:user/alice
+  # data-science:
+  #   - arn:aws:iam::123456789012:role/data-science-role
+
+# Map IAM principals to application names
+apps:
+  # my-chatbot:
+  #   - arn:aws:iam::123456789012:role/chatbot-role
+  # internal-tools:
+  #   - arn:aws:iam::123456789012:role/tools-role
+
+# Model pricing (per 1K tokens, USD)
+# Default pricing is built-in for common models. Add overrides or new models here.
+# pricing:
+#   claude-3-haiku-20240307:
+#     input: 0.00025
+#     output: 0.00125

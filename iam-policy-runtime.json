@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Description": "Minimum permissions the Dashrock collector Lambda needs at runtime. SST creates these automatically — this file is for reference only.",
+  "Statement": [
+    {
+      "Sid": "ReadBedrockLogs",
+      "Effect": "Allow",
+      "Action": [
+        "logs:StartQuery",
+        "logs:GetQueryResults",
+        "logs:FilterLogEvents"
+      ],
+      "Resource": "arn:aws:logs:*:*:log-group:bedrock-logs:*"
+    },
+    {
+      "Sid": "ReadWriteDataBucket",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::dashrock-*",
+        "arn:aws:s3:::dashrock-*/*"
+      ]
+    }
+  ]
+}
