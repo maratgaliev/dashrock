@@ -158,10 +158,10 @@ function FilterBarInner({ availableModels = [], availableTeams = [], availableAp
 
   return (
     <div className="db-card" style={{ marginBottom: "1.5rem", padding: "0.75rem 1rem" }}>
-      {/* Controls row — fixed layout, no wrapping */}
-      <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+      {/* Controls row */}
+      <div className="filter-controls">
         {/* Date range */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.35rem" }}>
+        <div className="filter-dates">
           <span className="db-caption" style={{ marginRight: "0.25rem" }}>From</span>
           <input
             type="date"
@@ -180,35 +180,33 @@ function FilterBarInner({ availableModels = [], availableTeams = [], availableAp
           />
         </div>
 
-        <hr className="db-separator" style={{ height: "24px", margin: 0 }} />
-
         {/* Multi-selects */}
-        <MultiSelect
-          label="Model"
-          options={availableModels}
-          selected={selectedModels}
-          onChange={(vals) => updateParams({ model: vals.length > 0 ? vals : null })}
-        />
-        <MultiSelect
-          label="Team"
-          options={availableTeams}
-          selected={selectedTeams}
-          onChange={(vals) => updateParams({ team: vals.length > 0 ? vals : null })}
-        />
-        <MultiSelect
-          label="App"
-          options={availableApps}
-          selected={selectedApps}
-          onChange={(vals) => updateParams({ app: vals.length > 0 ? vals : null })}
-        />
+        <div className="filter-selects">
+          <MultiSelect
+            label="Model"
+            options={availableModels}
+            selected={selectedModels}
+            onChange={(vals) => updateParams({ model: vals.length > 0 ? vals : null })}
+          />
+          <MultiSelect
+            label="Team"
+            options={availableTeams}
+            selected={selectedTeams}
+            onChange={(vals) => updateParams({ team: vals.length > 0 ? vals : null })}
+          />
+          <MultiSelect
+            label="App"
+            options={availableApps}
+            selected={selectedApps}
+            onChange={(vals) => updateParams({ app: vals.length > 0 ? vals : null })}
+          />
 
-        <div style={{ flex: 1 }} />
-
-        {hasFilters && (
-          <button className="db-btn db-btn--sm db-btn--ghost" onClick={clearAll} type="button">
-            Clear filters
-          </button>
-        )}
+          {hasFilters && (
+            <button className="db-btn db-btn--sm db-btn--ghost" onClick={clearAll} type="button">
+              Clear
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Active chips row — only shown when filters are active */}

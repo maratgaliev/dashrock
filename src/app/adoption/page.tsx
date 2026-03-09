@@ -31,7 +31,7 @@ export default async function AdoptionPage({ searchParams }: Props) {
     <div>
       <div className="dashrock-page-header">
         <h1 className="db-heading-2">AI Adoption</h1>
-        <div style={{ display: "flex", gap: "0.5rem" }}>
+        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap" }}>
           {models.map(([name]) => (
             <span key={name} className="db-chip">{name}</span>
           ))}
