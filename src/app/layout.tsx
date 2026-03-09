@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="dark" data-scheme="dark">
+    <html lang="en" data-theme="dark" data-scheme="dark" data-db-texture="none">
       <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daub-ui@latest/daub.css" />
       </head>
